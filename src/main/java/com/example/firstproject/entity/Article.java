@@ -20,4 +20,9 @@ public class Article {
     private String title;
     @Column //DB 테이블의 content열과 연결
     private String content;
+
+    public void patch(Article article) {    //수정할 내용이 있는 경우에만 호출하는 메서드
+        if (article.title != null) this.title = article.title;
+        if (article.content != null) this.content = article.content;
+    }
 }
